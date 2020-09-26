@@ -27,6 +27,11 @@ html {
   text-align: center;
 }
 
+#header {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
 #results {
   margin-top: 2em;
 }
