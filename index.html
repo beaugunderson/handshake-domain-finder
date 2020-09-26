@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>handshake domain search</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div>
+      regex: <input id="domain-regex" type="text" />
+
+      max cost: <input id="max-cost" type="text" value="" />
+
+      min cost: <input id="min-cost" type="text" value="" />
+    </div>
+
+    <div id="saved-searches">
+      <a href="#">letters only</a>
+      &bullet;
+      <a href="#">numbers only</a>
+      &bullet;
+      <a href="#">english words</a>
+    </div>
+
+    <div id="results">loading...</div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>

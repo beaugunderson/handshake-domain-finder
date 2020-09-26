@@ -1,0 +1,19 @@
+{
+  "name": "handshake-domain-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js --live --serve bundle.js",
+    "build": "browserify index.js > bundle.js"
+  },
+  "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "bent": "^7.3.10"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.2",
+    "budo": "^11.6.4"
+  }
+}

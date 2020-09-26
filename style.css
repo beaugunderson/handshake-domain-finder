@@ -1,0 +1,54 @@
+* {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+html {
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#domain-regex {
+  width: 350px;
+}
+
+#max-cost {
+  width: 75px;
+}
+
+#min-cost {
+  width: 75px;
+}
+
+#saved-searches {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+#results {
+  margin-top: 2em;
+}
+
+#show-additional {
+  margin-top: 1em;
+}
+
+a {
+  color: #0068ff;
+}
+
+a:visited {
+  color: #666;
+}
+
+.error {
+  background-color: LightPink;
+}
+
+strong {
+  display: inline-block;
+  min-width: 75px;
+  margin-right: 1em;
+}
