@@ -10,6 +10,16 @@ html {
   margin-bottom: 2em;
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 0.15em;
+}
+
+h1 > a {
+  font-size: 2em;
+  text-decoration: none;
+}
+
 #domain-regex {
   width: 350px;
 }
@@ -35,6 +45,12 @@ html {
   margin-bottom: 1.5em;
   text-align: center;
   color: #999;
+  font-size: 0.8em;
+}
+
+#header > a {
+  font-size: 1em;
+  text-decoration: none;
 }
 
 #results {
