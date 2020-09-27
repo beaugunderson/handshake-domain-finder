@@ -18,20 +18,6 @@ const domains = require('./domains.json').map((domain) => {
   return domain;
 });
 
-function compare(a, b) {
-  if (a[0] < b[0]) {
-    return -1;
-  }
-
-  if (a[0] > b[0]) {
-    return 1;
-  }
-
-  return 0;
-}
-
-domains.sort(compare);
-
 const $search = document.getElementById('domain-regex');
 const $maxCost = document.getElementById('max-cost');
 const $minCost = document.getElementById('min-cost');
@@ -131,9 +117,9 @@ function searchInner(showAll) {
   }
 }
 
-window.search = function search(showAll) {
-  setTimeout(() => searchInner(showAll), 0);
-};
+// eslint-disable-next-line no-multi-assign
+const search = (window.search = (showAll) =>
+  setTimeout(() => searchInner(showAll), 0));
 
 function updateHash() {
   history.push({

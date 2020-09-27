@@ -72,6 +72,35 @@ async function main() {
     records.push(record);
   }
 
+  const alphanumericCompare = new Intl.Collator('en', {
+    numeric: true,
+    sensitivity: 'base',
+  }).compare;
+
+  // first sort by length
+  records.sort((a, b) => {
+    const x = a[3] || a[0];
+    const y = b[3] || b[0];
+
+    if (x.length < y.length) {
+      return -1;
+    }
+
+    if (x.length > y.length) {
+      return 1;
+    }
+
+    return 0;
+  });
+
+  // then sort alphanumerically
+  records.sort((a, b) => {
+    const x = a[3] || a[0];
+    const y = b[3] || b[0];
+
+    return alphanumericCompare(x, y);
+  });
+
   fs.writeFileSync('./domains.json', JSON.stringify(records), 'utf-8');
 }
 
