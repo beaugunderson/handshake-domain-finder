@@ -28,10 +28,10 @@ function domainHtml(domain) {
   const [name, price, english, unicode] = domain;
 
   if (unicode) {
-    return `<div><a href="https://www.namebase.io/domains/${name}"><strong>${price}</strong></a> ${name} <span class="arrow">→</span> ${unicode}</div>`;
+    return `<div><a href="https://www.namebase.io/domains/${name}" target="_blank" rel="noopener"><strong>${price}</strong></a> ${name} <span class="arrow">→</span> ${unicode}</div>`;
   }
 
-  return `<div><a href="https://www.namebase.io/domains/${name}"><strong>${price}</strong></a> <span class="${
+  return `<div><a href="https://www.namebase.io/domains/${name}" target="_blank" rel="noopener"><strong>${price}</strong></a> <span class="${
     english ? 'english' : ''
   }">${name}</span></div>`;
 }
