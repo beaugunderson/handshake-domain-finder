@@ -22,13 +22,17 @@ html {
   width: 75px;
 }
 
+#form {
+  text-align: center;
+}
+
 #saved-searches {
   margin-top: 1em;
   text-align: center;
 }
 
 #header {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   text-align: center;
   color: #999;
 }
