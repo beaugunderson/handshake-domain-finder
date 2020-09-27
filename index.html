@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <title>handshake domain search</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body>
-    <div id="header">proof of concept by <a href="https://twitter.com/beaugunderson">@beaugunderson</a>; code on <a href="https://github.com/beaugunderson/handshake-domain-finder">github</a></div>
+    <div id="header">
+      proof of concept by <a href="https://twitter.com/beaugunderson">@beaugunderson</a>;
+      code on <a href="https://github.com/beaugunderson/handshake-domain-finder">github</a>
+    </div>
 
     <div>
       regex: <input id="domain-regex" type="text" />
@@ -19,13 +22,21 @@
       min cost: <input id="min-cost" type="text" value="" />
     </div>
 
-    <!-- <div id="saved-searches"> -->
-    <!--   <a href="#">letters only</a> -->
-    <!--   &bullet; -->
-    <!--   <a href="#">numbers only</a> -->
-    <!--   &bullet; -->
-    <!--   <a href="#">english words</a> -->
-    <!-- </div> -->
+    <div id="saved-searches">
+      <a href="#/?search=^[a-z]%2B$">letters</a>
+      &bullet;
+      <a href="#/?search=^\d%2B$">numbers</a>
+      &bullet;
+      <a href="#/?search=^\m%2B$">emoji</a>
+      &bullet;
+      <a href="#/?search=^\p{Cyrillic}%2B$">cyrillic</a>
+      &bullet;
+      <a href="#/?search=^\p{Han}%2B$">han</a>
+      &bullet;
+      <a href="#/?search=^\p{Hangul}%2B$">hangul</a>
+      &bullet;
+      <a href="#/?search=^\p{Katakana}%2B$">katakana</a>
+    </div>
 
     <div id="results">loading...</div>
 

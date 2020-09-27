@@ -1,0 +1,16 @@
+extends: 
+  - airbnb-base
+  - plugin:prettier/recommended
+
+env:
+  browser: true
+  es6: true
+
+globals:
+  BigInt: true
+
+parserOptions:
+  ecmaVersion: 2020
+
+plugins:
+  - prettier

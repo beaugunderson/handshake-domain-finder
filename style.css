@@ -7,7 +7,7 @@ html {
   margin-left: 10em;
   margin-right: 10em;
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 #domain-regex {
@@ -23,17 +23,18 @@ html {
 }
 
 #saved-searches {
-  margin-top: 0.5em;
+  margin-top: 1em;
   text-align: center;
 }
 
 #header {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   text-align: center;
+  color: #999;
 }
 
 #results {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 #show-additional {
@@ -46,6 +47,14 @@ a {
 
 a:visited {
   color: #666;
+}
+
+.arrow {
+  color: #aaa;
+}
+
+.english {
+  color: green;;
 }
 
 .error {
