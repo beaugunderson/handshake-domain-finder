@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --trace-warnings
 
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-console */
@@ -10,6 +10,22 @@ const bent = require('bent');
 const fs = require('fs');
 const punycode = require('punycode');
 const words = require('an-array-of-english-words');
+
+const oldDomains = {};
+
+try {
+  const oldRecords = JSON.parse(fs.readFileSync('./domains.json', 'utf-8'));
+
+  for (const record of oldRecords) {
+    const date = new Date(record[3]);
+
+    oldDomains[record[0]] = Number.isNaN(date.valueOf())
+      ? new Date('2020-09-26')
+      : date;
+  }
+} catch (e1) {
+  console.error('Error opening previous domains:', e1);
+}
 
 const getJSON = bent('json');
 
@@ -59,14 +75,21 @@ async function main() {
   const records = [];
 
   for (const domain of domains) {
+    const date = oldDomains[domain.name] || new Date();
+
     const record = [
       domain.name,
       (BigInt(domain.amount) / HNS_DIVISOR).toString(),
       words.includes(domain.name.toLowerCase()) ? 1 : 0,
+      date.toISOString(),
     ];
 
     if (isPunycode(domain.name)) {
-      record.push(punycode.toUnicode(domain.name));
+      try {
+        record.push(punycode.toUnicode(domain.name));
+      } catch (e) {
+        record.push('invalid punycode');
+      }
     }
 
     records.push(record);
